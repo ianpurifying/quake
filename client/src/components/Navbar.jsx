@@ -1,27 +1,39 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { LogIn, UserPlus, LayoutDashboard } from "lucide-react";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function Navbar() {
   const navigate = useNavigate();
   const location = useLocation(); // <-- Get current route
   const { isAuthenticated, user } = useAuth();
+  const [passed,setPassed] = useState(false)
 
   // Check if current path is /dashboard or any nested dashboard route
   const isDashboardActive = location.pathname.startsWith("/dashboard");
 
+
+
   return (
-    <nav className="w-full h-full flex items-center justify-between px-6 bg-white ">
+    <nav className="container w-full h-full flex rounded-xl  items-center justify-between px-6 bg-white mb-4">
       <div
         className="flex items-center gap-2 cursor-pointer"
         onClick={() => navigate("/")}
       >
-        <div className="text-xl font-bold text-[var(--moon-phases-d)]">
-          LOMI-LIN-DOL
+        <div className="center text-xl font-bold text-[var(--moon-phases-d)]">
+        
+              <div className="center mx-4">
+                <div className="w-3 h-3 mx-1 mb-1 rounded-full bg-green-300"></div>
+                <div className="w-3 h-3 mx-1 mb-1 auto rounded-full bg-orange-300"></div>
+                <div className="w-3 h-3 mx-1 mb-1 auto rounded-full bg-red-300"></div>
+              </div>
+              <p className="logo-text">lomiLINDOL</p>
+             
         </div>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className=" flex items-center justify-start flex-row-reverse full  gap-4">
         {!isAuthenticated ? (
           <>
             <button
