@@ -5,8 +5,7 @@ import { useState,useEffect } from "react";
 import {Plus,Trash2,FilePenLine} from "lucide-react"
 import * as reportServices from "../../services/reportsService"
 import EarthquakeAlertStatus from "../../components/EarthquakeAlertStatus"
-// import ReportsModal from "./modal";
-import Navbar from "../../components/Navbar";
+import ReportsModal from "./reportsModal";
 
 
 function Dashboard() {
@@ -38,7 +37,6 @@ function Dashboard() {
             const data = await reportServices.getReports()
             const reportsData = data.data.data
             setReports(reportsData)
-            console.log(reportsData)
             return reports    
         } catch (error) {
             console.error("Error Fetching Reports",error)
@@ -82,26 +80,23 @@ function Dashboard() {
       </div>
     );
   }
-
   
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
-
-
   return (
-    <section className="bg-[var(--main-white)] h-screen w-screen flex gap-4 flex-col overflow-y-hidden grid grid-cols-[1fr_9fr]
+    <section className="section bg-[var(--main-white)] h-screen w-screen flex gap-4 flex-col overflow-y-hidden grid grid-cols-[1fr_9fr]
      grid-rows-[2fr_3fr_5fr] ">
       
         <DashboardSidebar />
         
         <div className="center col-start-2 row-start-1 row-end-2 col-span-full gap-4 full  relative">
-            <div className="full shadow-lg rounded-xl center bg-white">a</div>
-            <div className="full shadow-lg rounded-xl center bg-white">b</div>
-            <div className="full shadow-lg rounded-xl center bg-white">c</div>
+            <div className="container full shadow-lg rounded-xl center bg-white">a</div>
+            <div className="container full shadow-lg rounded-xl center bg-white">b</div>
+            <div className="container full shadow-lg rounded-xl center bg-white">c</div>
         </div>
         
-        <main className="bg-white rounded-2xl full shadow-lg column-t row-start-2 row-end-4 col-start-2 col-span-full overflow-hidden p-4" >
+        <main className="container bg-white rounded-2xl full shadow-lg column-t row-start-2 row-end-4 col-start-2 col-span-full overflow-hidden p-4" >
     
           <nav className="w-full center h-[10%]   overflow-hidden py-8 px-4 ">
             <div className='full center-l'>Reports</div>
@@ -157,7 +152,7 @@ function Dashboard() {
           </table>
         </div>  
       </main>
-{/*     
+    
       {isOpen && 
       <ReportsModal isOpen={setIsOpen}
       mode={mode}
@@ -165,7 +160,7 @@ function Dashboard() {
       fetchReports={fetchReports}
       setSuccess={setSuccess}
       user={user}
-      />} */}
+      />}
 
 
      <EarthquakeAlertStatus />

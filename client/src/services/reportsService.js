@@ -33,7 +33,7 @@ export const insertReports = async (reportData) =>{
 export const UpdateReports = async (reportData,report_id) =>{
     try {
         
-        const res = await api.put(`http://localhost:5000/api/reports/put/reports/${report_id}`,{reportData})
+        const res = await api.put(`http://localhost:5000/api/reports/put/reports/${report_id}`,[reportData])
         console.log("UPDATE RESPONSE",res)
         return res
     } catch (error) {
@@ -45,7 +45,7 @@ export const UpdateReports = async (reportData,report_id) =>{
 export const deleteReports = async (report_id) =>{
     try {
         const res = await api.delete(`http://localhost:5000/api/reports/delete/reports/${report_id}`)
-        console.log("DELETE RESPONSE",res)
+        console.log("DELETE RESPONSE",res.report_id)
         return res
     } catch (error) {
         console.error("Error Getting Reports")

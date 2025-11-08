@@ -1,0 +1,113 @@
+
+@import "tailwindcss";
+
+
+:root{
+    /* DARK MODE PALLETE */
+    --metal-dark1: hsl(0, 2%, 14%);
+    --metal-dark2: hsl(0, 1%, 25%);
+    --metal-dark3: hsl(0, 0%, 13%);
+    --metal-dark4: hsl(240, 2%, 53%);
+    --metal-dark5: hsl(0, 0%, 7%);
+
+    /* GRAYS */
+    --gray_1--: hsl(0, 0%, 50%);
+    --color-jk-dark: hsl(204, 19%, 15%);
+    --color-jk-dgray: hsl(210, 100%, 99%);
+
+    /* DARK */
+    --dark-variant: hsl(220, 7%, 19%);
+    --dark-variantb: hsl(0, 0%, 21%);
+    --color-dark-blue: hsl(210, 29%, 15%);
+
+}
+
+body{
+    transition: 0.5s;
+}
+body.dark{
+    @apply bg-[var(--dark-variant)]  ;
+}
+
+.dmode-btn{
+    transition: all 0.5s ease-in;
+ }
+
+ 
+
+body.dark .dmode-box{
+     box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.8);
+}
+body.dark .dmode-btn {
+    transform: translateX(100%);
+}
+body.dark .container{
+    @apply bg-[var(--metal-dark5)];
+    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.8);
+}
+body.dark .section{
+    @apply bg-[var(--dark-variant)];
+}
+body.dark p{
+    @apply text-[var(--main-white)]
+}
+body.dark span{
+    @apply text-[var(--main-white)]
+}
+body.dark label{
+    @apply text-[var(--main-white)]
+}
+
+
+
+
+body.dark .sb-links{
+    @apply bg-[var(--metal-dark5)] text-gray-200;
+}
+body.dark .sb-links.active{
+    @apply bg-gray-200 text-[var(--metal-dark5)];
+}
+
+
+body.dark .moonstar{
+    @apply fill-gray-200 outline-white;
+}
+
+
+body.dark .main-header p{
+    @apply text-gray-200;
+}
+
+body.dark .main-header button{
+   box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.8);
+}
+body.dark .navs-btn{
+    @apply bg-[var(--metal-dark5)] text-gray-200;
+}
+
+
+body.dark .main::-webkit-scrollbar{
+     @apply bg-[var(--dark-variant)];
+}
+body.dark .main::-webkit-scroll-thumb{
+     @apply bg-[var(--metal-dark2)] rounded-md;
+}
+
+
+body.dark table tr:nth-child(odd){
+    @apply bg-[var(--dark-variant)];
+}
+
+body.dark table tr:nth-child(even){
+    @apply bg-[var(--metal-dark3)]
+}
+body.dark table th{
+    @apply bg-[var(--metal-dark1)] text-gray-100;
+}
+body.dark table td{
+    @apply text-gray-200;
+}
+body.dark table button{
+    @apply shadow-lg;
+}
+

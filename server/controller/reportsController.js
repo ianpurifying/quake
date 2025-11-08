@@ -27,7 +27,6 @@ export const selectReport = async (req,res) =>{
 
     const {user_id} = req.params
     const report = await reportsModel.readReport(user_id)
-    console.log("REPORT DISPLAYED",report)
      res.json({
       success: true,
       data:report,
@@ -48,7 +47,6 @@ export const selectReport = async (req,res) =>{
 export const insertReports = async (req,res) =>{
   try {
     const reportData = req.body
-    console.log("REPORT DATA FROM CONTROLLER",reportData)
     const reports = await reportsModel.insertReports(reportData)
     console.log("ADDED",reports)
 
@@ -72,11 +70,16 @@ export const updateReports = async (req,res) =>{
   try {
 
     const {report_id} = req.params;
+    
     const reportData = req.body
+
+    console.log(" REPORT DATA FROM CONTROLLER",reportData)
+    
     const reports = await reportsModel.updateReports(reportData,report_id)
-    console.log("UPDATED",reports)
+
 
      res.json({
+
       success: true,
       data:reports,
       message: "Report Updated",
@@ -93,11 +96,9 @@ export const updateReports = async (req,res) =>{
 
 export const deleteReports = async (req,res) =>{
   try {
-
     const {report_id} = req.params;
     const reports = await reportsModel.deleteReports(report_id)
-    console.log("DELETED",reports)
-
+    console.log("DELETED ",reports)
      res.json({
       success: true,
       data:reports,
