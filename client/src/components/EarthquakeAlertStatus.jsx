@@ -10,7 +10,7 @@ function EarthquakeAlertStatus() {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className="fixed bottom-4 left-4 z-50">
       <div className="bg-white rounded-lg shadow-lg p-4 max-w-sm">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">

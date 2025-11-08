@@ -23,6 +23,7 @@ let cachedData = null;
 let lastFetchTime = null;
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
+
 // Function to fetch and alayze phivolcs data
 async function fetchEarthquakeData() {
   try {
