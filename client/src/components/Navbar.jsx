@@ -21,8 +21,15 @@ function Navbar() {
         className="flex items-center gap-2 cursor-pointer"
         onClick={() => navigate("/")}
       >
-        <div className="text-xl font-bold text-[var(--moon-phases-d)]">
-            <p className="logo-text">lomiLINDOL</p>
+        <div className="center text-xl font-bold text-[var(--moon-phases-d)]">
+        
+              <div className="center mx-4">
+                <div className="w-3 h-3 mx-1 mb-1 rounded-full bg-green-300"></div>
+                <div className="w-3 h-3 mx-1 mb-1 auto rounded-full bg-orange-300"></div>
+                <div className="w-3 h-3 mx-1 mb-1 auto rounded-full bg-red-300"></div>
+              </div>
+              <p className="logo-text">lomiLINDOL</p>
+             
         </div>
       </div>
 

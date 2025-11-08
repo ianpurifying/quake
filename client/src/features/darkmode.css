@@ -32,6 +32,7 @@ body.dark{
 .dmode-btn{
     transition: all 0.5s ease-in;
  }
+ 
 
  
 
@@ -81,7 +82,9 @@ body.dark .tl {
 body.dark .account-settings{
     @apply text-[var(--main-white)];
 }
-
+body.dark .scs-text{
+    @apply text-[var(--metal-dark5)];
+}
 
 body.dark .modal-header{
     @apply bg-[var(--metal-dark2)];
@@ -102,7 +105,9 @@ body.dark .sb-links.active{
 body.dark .moonstar{
     @apply fill-gray-200 outline-white;
 }
-
+body.dark .reports-txt{
+     @apply text-[var(--main-white)];
+}
 
 body.dark .main-header p{
     @apply text-gray-200;

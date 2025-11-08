@@ -10,8 +10,8 @@ function EarthquakeAlertStatus() {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 z-50">
-      <div className="container  rounded-lg shadow-lg p-4 max-w-sm">
+    <div className="fixed bg-white bottom-4 left-4 z-50">
+      <div className="container bg-green-100 rounded-lg shadow-lg p-4 max-w-sm">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <span className="els font-semibold text-sm">Earthquake Alerts</span>
@@ -28,7 +28,7 @@ function EarthquakeAlertStatus() {
                 </p>
                 <button
                   onClick={() => simulateEarthquakeEvent()}
-                  className="w-full px-3 py-2 rounded text-xs font-medium bg-purple-100 text-purple-700 hover:bg-purple-200 transition-colors"
+                  className="w-full px-3 py-2 rounded text-xs font-medium bg-green-500 text-purple-700 hover:bg-green-600 transition-colors"
                 >
                   Alert
                 </button>

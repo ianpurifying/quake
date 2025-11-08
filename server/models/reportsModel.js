@@ -53,7 +53,7 @@ export const updateReports = async (reportData,report_id) =>{
     try {
         const [rows] = await db.query(`UPDATE reports 
             SET user_id = ?,location = ?,magnitude = ?, description = ? WHERE report_id = ?`,[user_id,location,magnitude,description,report_id])
-        return rows[0]
+        return rows
     } catch (error) {
         console.error(error)
         throw error

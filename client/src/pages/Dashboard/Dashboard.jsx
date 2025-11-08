@@ -108,8 +108,8 @@ function Dashboard() {
         
         <main className="container bg-white rounded-2xl full shadow-lg column-t row-start-1 row-end-4 col-start-2 col-span-full overflow-hidden p-4" >
     
-          <nav className="w-full center h-[10%]   overflow-hidden py-8 px-4 ">
-            <div className='full center-l'>Reports</div>
+          <nav className="w-full center h-[10%]   overflow-hidden py-8  ">
+            <div className='reports-txt full center-l text-3xl'>Reports</div>
             <div className='full flex items-center justify-start flex-row-reverse'>
               <button onClick={openInsert} className='shadow-lg px-4 py-2  cursor-pointer rounded-xl center 
               hover:bg-[var(--moon-phases-e)] bg-[var(--moon-phases-d)] stroke="#fff"'
@@ -118,10 +118,9 @@ function Dashboard() {
           </nav>
 
           {success && <div className="center w-full my-4 ">
-              <p className="text-[var(--color-success-a)] bg-green-100 p-4 w-full border-2 shadow-lg border-green-500 rounded-xl ">{success}</p>
+              <p className="scs-text text-[var(--color-success-a)] bg-green-100 p-4 w-full border-2 shadow-lg border-green-500 rounded-xl ">{success}</p>
           </div>}
-
-        
+     
         <div className='column-t overflow-y-auto ' >
           <table className='eq-table table-fixed md:max-w-full md:w-full lg:max-h-full lg:h-full lg:w-full overflow-y-auto'>
             <thead>
@@ -145,10 +144,7 @@ function Dashboard() {
                       <td className='text-start p-4  text-sm'>{r.magnitude}</td>
                       <td className='text-start p-4  text-sm'>{r.description}</td>
                       <td className='text-start p-4  text-sm'>{r.created_at}</td>
-                      <td className='text-center p-4  text-sm'>
-                        <button  onClick={() => openUpdate(r)}className='hover:shadow-2xl  hover:bg-green-400 text-smmx-2 cursor-pointer shadow-lg bg-[var(--color-success-b)] text-white rounded-xl px-4 py-1'>
-                          <FilePenLine size={18}/>
-                        </button>
+                      <td className='text-center p-4  text-sm'>                    
                            <button  onClick={() => openDelete(r)} className=' hover:shadow-2xl hover:bg-red-400 text-sm mx-2 cursor-pointer shadow-lg bg-[var(--color-danger-b)] text-white rounded-xl px-4 py-1'>
                           <Trash2 size={18}/>
                         </button>
